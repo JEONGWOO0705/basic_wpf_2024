@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,9 +24,10 @@ namespace ex04_wpf_bike_shop
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // 코드 비하인드에서 Source 속성에서 페이지를 넣을떄는
-            // UriKind.RelativeOrAbsolute 파라미터 반드시 넣어야함
-            MainFrame.Source = new Uri("/ContactPage.xaml", UriKind.RelativeOrAbsolute);
+            // 코드비하인드에서 Source 속성에 페이지를 넣을때는
+            // UriKind.RelativeOrAbsolute 파라미터를 반드시 넣어야!
+            MainFrame.Source = new Uri("/MenuPage.xaml", UriKind.RelativeOrAbsolute);
+            Debug.WriteLine("Debug!");
         }
     }
 }
