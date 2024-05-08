@@ -123,11 +123,13 @@ IoT 개발자 WPF 학습 리포지토리
     ![저장화면](https://raw.githubusercontent.com/JEONGWOO0705/basic_wpf_2024/main/image/wpf004.png)
 
 - Movie API 연동 앱 (movieFinder)
-    - DB(SQL Server) 연동
-    - MahApps.Metro
-    - OpenAPI 두가지 사용
-    - MVVM은 시간 부족으로 사용안함
     - 좋아하는 영화 즐겨찾기 앱
+    - DB(SQL Server) 연동
+    - MahApps.Metro UI
+    - CefSharp WebBrowser 패키지
+    - Google.Apis 패키지 
+    - OpenAPI 두가지 사용
+    - MVVM 사용안함
     - [TMDB](https://www.themoviedb.org/) OpenAPI 활용
         - 회원가입 후 API 신청
     - [Youtube API](https://console.cloud.google.com/)활용
@@ -139,3 +141,20 @@ IoT 개발자 WPF 학습 리포지토리
             2. OAutho 동의화면, 기본내용 입력후 다움
             3. 범위는 저장후 계속
             4. OAuth Client ID, 앱 유형을 데스크톱 앱으로 설정, 이름 입력 후 다음 클릭
+
+
+## 6일차
+- MovieFinder 2024 남은것
+    - 즐겨찾기 후 다시 선택 즐겨찾기 막아야함
+    - 즐겨찾기 삭제
+    - 그리드뷰 영화를 더블클랙하면 영화소개 팝업
+
+
+## 7일차
+- MovieFinder 2024 남은것
+
+- 데이터포털 API 연동앱 예제
+    - 5월 13일 개인 프로젝트 참조 소스
+
+## 8일차
+- WPF 개인 프로젝트 포트폴리오 작업
