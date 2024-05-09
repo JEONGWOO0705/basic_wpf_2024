@@ -22,7 +22,7 @@
             <ColumnDefinition Width="510"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="50" />
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
@@ -36,7 +36,7 @@
                     <GridViewColumn Header="썸네일" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source ="{Binding Thumbnail}"/>
+                                <Image Source="{Binding Thumbnail}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -49,8 +49,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Background="Gainsboro" Margin="10">
-            <!--<WebBrowser Source="https:/www.youtbe.com"/> 문제가 많음, javascript 최신판 적용 못하는 오류     -->
+
+        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Background="Gainsboro">
+            <!--<WebBrowser Source="https://www.youtube.com"/> 문제가 많음. javascript 최신판 적용못하는 오류-->
             <cefSharp:ChromiumWebBrowser x:Name="BrsYoutube" Address="https://www.youtube.com"/>
         </Grid>
     </Grid>
