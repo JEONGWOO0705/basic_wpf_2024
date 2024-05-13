@@ -281,7 +281,7 @@ namespace ex10_MovieFinder2024
                 return;
             }
 
-            if (GrdResult.SelectedItems.Count == 0)
+            (if (GrdResult.SelectedItems.Count == 0)
             {
                 await this.ShowMessageAsync("삭제", "삭제할 영화를 선택하세요.");
                 return;
@@ -317,7 +317,7 @@ namespace ex10_MovieFinder2024
             catch (Exception ex)
             {
                 await this.ShowMessageAsync("오류", $"즐겨찾기 조회오류 {ex.Message}");
-            }
+            })
 
             BtnViewFavorite_Click(sender, e); // 즐겨찾기 보기 재실행
 

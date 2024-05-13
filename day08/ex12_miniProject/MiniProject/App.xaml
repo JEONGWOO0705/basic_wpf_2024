@@ -1,9 +1,9 @@
-﻿<Application x:Class="ex11_Gimhae_FineDust.App"
+﻿<Application x:Class="MiniProject.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ex11_Gimhae_FineDust"
+             xmlns:local="clr-namespace:MiniProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        v
+         
     </Application.Resources>
 </Application>
