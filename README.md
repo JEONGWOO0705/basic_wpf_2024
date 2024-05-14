@@ -175,7 +175,7 @@ https://github.com/JEONGWOO0705/basic_wpf_2024/assets/84116251/90cce31d-e78b-44d
 
 ## 프로젝트 및 이 수업을하면서 배운점!! 
 
-    - OpenApi를 사용하여 데이터를 읽고 화면에 출력하는 방법을 배움
+- OpenApi를 사용하여 데이터를 읽고 화면에 출력하는 방법을 배움
 
 ```cs
 string openApiUri = "";
@@ -228,7 +228,7 @@ if (resultCode == "INFO-0") // json파일안에 있는 resultCode 가 INFO-0 일
     this.DataContext = WarningList;
 ```
 
-    - 특히 binding을 통해 화면에 출력할 수 있는 것은 새로웠던것 같았다.
+- 특히 binding을 통해 화면에 출력할 수 있는 것은 새로웠던것 같았다.
 
 ```cs
 <DataGrid x:Name="GrdResult" Grid.Row="1" Margin="10"
@@ -236,9 +236,10 @@ if (resultCode == "INFO-0") // json파일안에 있는 resultCode 가 INFO-0 일
       // xaml.cs에 DataContext에 들어간 리스트들을 표현해준다!!
 ```
 
-    - 데이터 클릭시 지도 확인 기능 구현
-        - 또다른 xaml 창을 만들어 데이터 더블 클릭시 데이터에 알맞는 값을 보내주어 지도를 확인할 수 있는 기능을 구현하였다.
-        - 부모, 자식 클래스, 오버로딩에 대해 다시 한번 복습하게 되었다.
+- 데이터 클릭시 지도 확인 기능 구현
+    - 또다른 xaml 창을 만들어 데이터 더블 클릭시 데이터에 알맞는 값을 보내주어 지도를 확인할 수 있는 기능을 구현하였다.
+    - 부모, 자식 클래스, 오버로딩에 대해 다시 한번 복습하게 되었다.
+
 
 ```cs
 // main xaml
