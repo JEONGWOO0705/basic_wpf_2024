@@ -173,3 +173,91 @@ https://github.com/JEONGWOO0705/basic_wpf_2024/assets/84116251/103b16b4-1926-445
 https://github.com/JEONGWOO0705/basic_wpf_2024/assets/84116251/90cce31d-e78b-44d6-8542-c47a2d6420a5
 
 
+## 프로젝트 및 이 수업을하면서 배운점!! 
+
+    - OpenApi를 사용하여 데이터를 읽고 화면에 출력하는 방법을 배움
+
+```cs
+string openApiUri = "";
+string result = string.Empty;
+
+// WebRequest, WebResponse 객체
+WebRequest req = null;   // 웹 리소스를 나타내는 개체를 만드는데 사용(WebRequest) , 
+WebResponse res = null; // WebResponse는 웹 리소스에 대한 응답을 나타내는 개체
+StreamReader reader = null; // 웹 응답을 읽기위한 스티림 리더
+
+/*
+ --> req를 사용하여 openApiUri에 대한 HTTP Get 요청을 생성 
+--> res 를 사용하여 서버에 대한 응답을 받고, reader를 통해 응답을 읽어온다.
+ */
+
+
+
+try
+{
+    req = WebRequest.Create(openApiUri);    // 지정된 URL에 대한 WebRequest 생성
+    res = await req.GetResponseAsync();     // 비동기 방식으로 서버 응답을 받음
+    reader = new StreamReader(res.GetResponseStream());      // 응답 스트림을 읽을 수 있는 StreamReader 생성
+    result = await reader.ReadToEndAsync();     // 비동기 방식으로 응답 데이터를 모두 읽어옴
+
+    //await this.ShowMessageAsync("결과", result);
+}
+catch (Exception ex)
+{
+    await this.ShowMessageAsync("오류", $"OpenAPI 조회오류 {ex.Message}");
+}
+```
+
+```cs
+if (resultCode == "INFO-0") // json파일안에 있는 resultCode 가 INFO-0 일때 실행해라
+{
+    var data = jsonResult["DisasterMsg"][1]["row"]; // // JSON 데이터에서 필요한 배열 데이터를 가져옴
+    var jsonArray = data as JArray; // json 자체에서 []안에 들어간 배열데이터만 JArray 변환가능,  // 배열 데이터를 JArray 형식으로 변환
+
+    var WarningList = new List<WarningMessage>();   // WarningMessage 객체를 담을 리스트 생성
+    foreach (var item in jsonArray)
+    {
+        // 각 배열 요소에서 필요한 정보를 추출하여 WarningMessage 객체를 생성하여 리스트에 추가
+        WarningList.Add(new WarningMessage()
+        {
+            //......
+        });
+    }
+
+    // WarningList를 WPF 프로젝트의 DataContext로 설정하여 화면에 바인딩
+    this.DataContext = WarningList;
+```
+
+    - 특히 binding을 통해 화면에 출력할 수 있는 것은 새로웠던것 같았다.
+
+```cs
+<DataGrid x:Name="GrdResult" Grid.Row="1" Margin="10"
+      IsReadOnly="True" ItemsSource="{Binding}"/>
+      // xaml.cs에 DataContext에 들어간 리스트들을 표현해준다!!
+```
+
+    - 데이터 클릭시 지도 확인 기능 구현
+        - 또다른 xaml 창을 만들어 데이터 더블 클릭시 데이터에 알맞는 값을 보내주어 지도를 확인할 수 있는 기능을 구현하였다.
+        - 부모, 자식 클래스, 오버로딩에 대해 다시 한번 복습하게 되었다.
+
+```cs
+// main xaml
+private void GrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+{
+    var curItem = GrdResult.SelectedItem as WarningMessage;
+    // map.xaml.cs에 있는 오버로딩된 함수 map(string location_id)를 불러온다.
+    var mapWindow = new map(curItem.location_name); 
+    mapWindow.Owner = this;
+}
+
+// map xaml
+ public map()
+ {
+     InitializeComponent();
+ }
+ public map(string location_id) : this() // 함수가 실행됬을때 부모의 함수(기존 생성자) 먼저 수행하게 된다.
+ {
+     BrsLoc.Address = $"https://map.naver.com/p/search/{location_id}";
+ }
+
+```

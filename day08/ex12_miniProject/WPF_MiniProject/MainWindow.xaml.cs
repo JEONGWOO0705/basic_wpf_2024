@@ -274,6 +274,8 @@ namespace WPF_MiniProject
         private void GrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var curItem = GrdResult.SelectedItem as WarningMessage;
+
+            // map.xaml.cs에 있는 오버로딩된 함수 map(string location_id)를 불러온다.
             var mapWindow = new map(curItem.location_name);
             mapWindow.Owner = this;
             mapWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
