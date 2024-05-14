@@ -173,9 +173,15 @@ https://github.com/JEONGWOO0705/basic_wpf_2024/assets/84116251/103b16b4-1926-445
 https://github.com/JEONGWOO0705/basic_wpf_2024/assets/84116251/90cce31d-e78b-44d6-8542-c47a2d6420a5
 
 
+
 ## 프로젝트 및 이 수업을하면서 배운점!! 
 
-- OpenApi를 사용하여 데이터를 읽고 화면에 출력하는 방법을 배움
+- 요약
+    - OpenApi를 사용하여 데이터를 읽고 화면에 출력하는 방법을 배움
+    - SQL을 활용하여 데이터를 저장,읽기,삭제 등의 기능을 구현하면서 기존의 배웠던 내용들을 학습함
+    - 데이터에 들어가있는 값을 추출하여 네이버 지도를 실행시키는 기능을 구현할 수 있게 하였다.
+    - Binding 짱!!
+
 
 ```cs
 string openApiUri = "";
