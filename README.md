@@ -268,3 +268,16 @@ private void GrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
  }
 
 ```
+
+
+
+## FREE API
+
+- https://github.com/public-apis/public-apis 깃허브에 많은 API 보유
+- 축구 API Sportmonks Football (https://docs.sportmonks.com/football) --> postman  을 통해 API GET 할 수 있다
+    - endpoint -> Filters에 들어가있는 URL 복사해서 연결하기!!
+![postman](https://raw.githubusercontent.com/JEONGWOO0705/basic_wpf_2024/main/image/practice002.jpg)
+
+
+
+![postman](https://raw.githubusercontent.com/JEONGWOO0705/basic_wpf_2024/main/image/practice001.jpg)
