@@ -1,0 +1,83 @@
+﻿<Window x:Class="sakila.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sakila"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                Content="Language" FontSize="19"
+                />
+
+            <DataGrid x:Name="GrdResults" Grid.Row="1" Grid.Column="0"
+                   AutoGenerateColumns="False" IsReadOnly="True"
+                   >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="language_id" Binding="{Binding language_id}" Width="1*"/>
+                    <DataGridTextColumn Header="name" Binding="{Binding name}" Width="1*"/>
+                    <DataGridTextColumn Header="last_update" Binding="{Binding last_update}" Width="1*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="BtnSelect" Grid.Row="2" Grid.Column="0"
+                 Content="조회"
+                 Width="150" Height="40" Click="BtnSelect_Click"/>
+        </Grid>
+        <GroupBox Grid.Row="0" Grid.Column="1" Margin="10"
+               Header="입력 항목">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0"
+                    Content="아이디" FontWeight="Bold"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Margin="31,0,0,0" Width="75"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                    Content="Name" FontWeight="Bold"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Margin="24,0,0,0" Width="82"/>
+                <TextBox x:Name="TxtId" Grid.Column="1"
+                      VerticalAlignment="Center"  Height="16" Margin="0,0,62,0"
+                      />
+
+                <TextBox x:Name="TxtName" Grid.Row="1" Grid.Column="1"
+                      VerticalAlignment="Center" Height="16" Margin="0,0,62,0"
+                      />
+
+                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                         Orientation="Horizontal"
+                         HorizontalAlignment="Center">
+                    <Button x:Name="BtnInsert" Content="신규"
+                         Width="100" Height="40" Click="BtnInsert_Click"/>
+                    <Button x:Name="BtnSave" Content="저장"
+                         Width="100" Height="40" Click="BtnSave_Click"/>
+                    <Button x:Name="BtnDel" Content="삭제"
+                         Width="100" Height="40" Click="BtnDel_Click"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
