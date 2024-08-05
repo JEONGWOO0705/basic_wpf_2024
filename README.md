@@ -281,3 +281,10 @@ private void GrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 
 
 ![postman](https://raw.githubusercontent.com/JEONGWOO0705/basic_wpf_2024/main/image/practice001.jpg)
+
+
+## sakila DB 작업 영상
+
+
+https://github.com/user-attachments/assets/d526deb4-4afa-44cc-8f16-5467226b8901
+
